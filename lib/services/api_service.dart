@@ -16,8 +16,8 @@ class ApiService {
   String? currentUserId;
 
   void _initDefaultUrl() {
-    // URL Conveyor Cloud chính thức (chỉ lấy domain gốc, không kèm /api/Authenticate)
-    baseUrl = 'https://largeorangehen46.conveyor.cloud';
+    // URL Ngrok cố định vĩnh viễn (Static Free Dev Domain)
+    baseUrl = 'https://saddled-t-shirt-snooper.ngrok-free.dev';
   }
 
   void updateBaseUrl(String newUrl) {
@@ -31,7 +31,10 @@ class ApiService {
   }
 
   Map<String, String> _headers() {
-    final headers = {'Content-Type': 'application/json'};
+    final headers = {
+      'Content-Type': 'application/json',
+      'ngrok-skip-browser-warning': 'true',
+    };
     if (currentToken != null && currentToken!.isNotEmpty) {
       headers['Authorization'] = 'Bearer $currentToken';
     }
@@ -46,7 +49,7 @@ class ApiService {
     try {
       final response = await http.post(
         uri,
-        headers: {'Content-Type': 'application/json'},
+        headers: _headers(),
         body: jsonEncode({
           'tenDangNhap': username.trim(),
           'matKhau': password.trim(),
@@ -85,7 +88,7 @@ class ApiService {
     try {
       final response = await http.post(
         uri,
-        headers: {'Content-Type': 'application/json'},
+        headers: _headers(),
         body: jsonEncode({
           'tenDangNhap': username.trim(),
           'maOtp': otp.trim(),
@@ -127,7 +130,7 @@ class ApiService {
     try {
       final response = await http.post(
         uri,
-        headers: {'Content-Type': 'application/json'},
+        headers: _headers(),
         body: jsonEncode({
           'tenDangNhap': username.trim(),
           'email': email.trim(),

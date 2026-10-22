@@ -292,7 +292,7 @@ class _LoginScreenState extends State<LoginScreen> with SingleTickerProviderStat
               spacing: 8,
               runSpacing: 6,
               children: [
-                _buildQuickChip('☁️ Conveyor Cloud', 'https://largeorangehen46.conveyor.cloud', urlController),
+                _buildQuickChip('⚡ Ngrok Vĩnh Viễn', 'https://saddled-t-shirt-snooper.ngrok-free.dev', urlController),
                 _buildQuickChip('Localhost (PC)', 'http://localhost:5151', urlController),
                 _buildQuickChip('Android Emulator', 'http://10.0.2.2:5151', urlController),
               ],
