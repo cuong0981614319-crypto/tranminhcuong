@@ -17,7 +17,7 @@ class ApiService {
 
   void _initDefaultUrl() {
     // URL Conveyor Cloud chính thức (chỉ lấy domain gốc, không kèm /api/Authenticate)
-    baseUrl = 'https://littletealshed97.conveyor.cloud';
+    baseUrl = 'https://largeorangehen46.conveyor.cloud';
   }
 
   void updateBaseUrl(String newUrl) {
